@@ -15,6 +15,7 @@ app.use(express.json());
 
 // database connection
 const local_db_url = process.env.local_db_url
+console.log(local_db_url)
 try {
     mongoose.connect(local_db_url).then(console.log("database is running"))
 } catch (err) {
@@ -34,5 +35,6 @@ app.use('/login',login_route)
 // register route
 
 app.use('/register',register_route)
+
 
 app.get('/', (req, res) => res.send('Hello World!'))
