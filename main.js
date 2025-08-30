@@ -3,12 +3,13 @@ const  express = require('express');
 const mongoose = require('mongoose');
 const login_route = require('./routers/login');
 const register_route = require('./routers/register');
+const cors = require('cors');
 
 const app = express()
 
 
 
-
+app.use(cors());
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 
